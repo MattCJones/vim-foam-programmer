@@ -14,6 +14,10 @@ Plug `vim-foam-programmer`
 
 ## Features
 
+This plugin provides additional support for creating, editing, or viewing
+OpenFOAM source code files using [Vim](https://www.vim.org). The specific
+features are listed.
+
 * Automatically searches OpenFOAM makefiles for linked header files and adds
   them Vim's path.
     - Allows for opening included header files inside Vim with `gf`
