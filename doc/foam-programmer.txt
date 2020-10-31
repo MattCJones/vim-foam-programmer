@@ -1,0 +1,71 @@
+*foam-programmer.txt*  Helpful utilities for the OpenFOAM programmer.
+
+Version: 0.0
+Author: Matthew C. Jones <matt.c.jones.aoe@gmail.com>
+License: The MIT license (MIT) {{{
+Copyright © 2020 <Matthew C. Jones>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the “Software”), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+}}}
+
+CONTENT						*foam-programmer-contents*
+
+Introduction	|foam-programmer-introduction|
+Changelog	|foam-programmer-changelog|
+
+
+
+
+==============================================================================
+INTRODUCTION					*foam-programmer-introduction*
+
+This plugin provides helpful utilities for an OpenFOAM programmer.
+
+==============================================================================
+FEATURES					*foam-programmer-features*
+
+* Automatically searches OpenFOAM makefiles for linked header files and adds
+  them Vim's path.
+    - Allows for opening included header files inside Vim with `gf`
+    - Allows for built-in Vim include and definition searching 
+        * Use `[_CTRL-i`, `[_CTRL-d`, `CTRL-w_i`, `CTRL-w_d`, etc.
+        * See `:help include-search definition-search`
+* Convenient command to build Ctags that references custom user files as well
+  as OpenFOAM source code.
+    - Run `:FoamCtags` to generate tags file
+    - Use `g]` `Ctrl-]` and `Ctrl-t` to navigate through functions and
+      variables of interest
+    - See `:help tag-matchlist`
+    - Requires external dependency: exuberant-ctags or universal-ctags
+* Automatically set OpenFOAM files to cpp filetype for better readability.
+  This is disabled by default. To enable, place the following line in your
+  vimrc file.
+
+==============================================================================
+COMMANDS					*foam-programmer-commands*
+
+FoamCtags         - Build Ctags file that references OpenFOAM source code.
+FoamCtagsPrecise  - Same as |FoamCtags| except only reference linked files.
+FoamParseMakeFile - Manually parse an OpenFOAM 'Make/options' makefile
+
+==============================================================================
+CHANGELOG					*foam-programmer-changelog*
+
+==============================================================================
+ vim:tw=78:ts=8:noet:ft=help:norl:fen:fdl=0:fdm=marker:
