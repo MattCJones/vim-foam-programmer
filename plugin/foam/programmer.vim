@@ -73,6 +73,7 @@ function! s:CheckFoamFileType()
   for nL in range(1,10)  " loop through the first 10 lines
     if (getline(nL) =~ 'FoamFile' || getline(nL) =~ '\\      /  F ield')
       setfiletype cpp
+      set path+=$FOAM_ETC
       break
     endif
   endfor
